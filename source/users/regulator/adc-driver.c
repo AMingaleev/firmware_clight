@@ -16,13 +16,12 @@
 #define PERIOD_MIN              (10)
 
 #define DMA_CHANNEL_COUNT   (1)
-//#define FILTER_COEFF        (float)(0.1)
 
 static DMA_HandleTypeDef dma;
 static ADC_HandleTypeDef adc;
 static ADC_ChannelConfTypeDef adc_config;
-static uint32_t adc_value = 0;     //сырые значения
-//static uint32_t speed_value = 0;   //скорость мигания
+static uint32_t adc_value = 0;     // 
+//static uint32_t speed_value = 0;   // 
 static uint8_t  adc_flag = 0;
 
 static void ADC_Init(void);
@@ -36,20 +35,20 @@ static void DMA_CpltCallback(DMA_HandleTypeDef *hdma){
   __NOP();
 }
 
-static void ADC_Init(void){
-	__HAL_RCC_GPIOA_CLK_ENABLE();		//Тактирование GPIOA
-	__HAL_RCC_ADC1_CLK_ENABLE();		//Тактирование АЦП
-  __HAL_RCC_DMA1_CLK_ENABLE();    //Тактирование DMA
+static void ADC_Init(void){	
+    __HAL_RCC_GPIOA_CLK_ENABLE();   // GPIOA
+    __HAL_RCC_ADC1_CLK_ENABLE();    //  
+    __HAL_RCC_DMA1_CLK_ENABLE();    // DMA
 
-//Настройка GPIO PA0
-	GPIO_InitTypeDef gpio;
-	gpio.Pin    = SPEED_PIN;
-  gpio.Mode   = GPIO_MODE_ANALOG;
-  gpio.Pull   = GPIO_NOPULL;
-  gpio.Speed  = GPIO_SPEED_LOW;
-  HAL_GPIO_Init(SPEED_GPIO, &gpio);
+// GPIO PA0
+    GPIO_InitTypeDef gpio;
+    gpio.Pin    = SPEED_PIN;
+    gpio.Mode   = GPIO_MODE_ANALOG;
+    gpio.Pull   = GPIO_NOPULL;
+    gpio.Speed  = GPIO_SPEED_LOW;
+    HAL_GPIO_Init(SPEED_GPIO, &gpio);
 
-//Настройка DMA
+// DMA
   dma.Instance                  = DMA1_Channel1;
   dma.Init.Direction            = DMA_PERIPH_TO_MEMORY;
   dma.Init.MemDataAlignment     = DMA_MDATAALIGN_HALFWORD;
@@ -62,7 +61,7 @@ static void ADC_Init(void){
   dma.XferHalfCpltCallback      = &DMA_HalfCallback;
   HAL_DMA_Init(&dma);
 
-//Настройка АЦП
+// 
   adc.Instance = ADC1;
   adc.Init.ContinuousConvMode     = ENABLE;
   adc.Init.DataAlign              = ADC_DATAALIGN_RIGHT;

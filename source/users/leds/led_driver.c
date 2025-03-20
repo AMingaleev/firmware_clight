@@ -4,6 +4,8 @@
 #include "stm32f1xx_hal_gpio.h"
 #include "stm32f1xx_hal_tim.h"
 
+#include "config.h"
+
 #define APB1_FREQUENCE_HZ                       (48000000)
 #define LED_BLINK_FREQUENCE_HZ                  (100000)
 #define TIMER_PRESCALER_HZ                      (APB1_FREQUENCE_HZ/LED_BLINK_FREQUENCE_HZ)       //100KHz
@@ -17,22 +19,22 @@ typedef struct LedConfig {
 } LedConfig_t;
 
 static LedConfig_t leds[CHANNEL_OUT_INDEX] = {
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_12, .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_1
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_13, .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_2
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_14, .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_3
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_15, .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_4
-    {.gpio = GPIOA, {.Pin = GPIO_PIN_8,  .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_5
-    {.gpio = GPIOA, {.Pin = GPIO_PIN_9,  .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_6
-    {.gpio = GPIOA, {.Pin = GPIO_PIN_10, .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_7
-    {.gpio = GPIOA, {.Pin = GPIO_PIN_11, .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_8
-    {.gpio = GPIOA, {.Pin = GPIO_PIN_12, .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_9
-    {.gpio = GPIOA, {.Pin = GPIO_PIN_15, .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_10
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_3,  .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_11
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_4,  .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_12
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_5,  .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_13
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_6,  .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_14
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_7,  .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_15
-    {.gpio = GPIOB, {.Pin = GPIO_PIN_8,  .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_16
+    {.gpio = CHANNEL_1_GPIO,	{.Pin = CHANNEL_1_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_1
+    {.gpio = CHANNEL_2_GPIO,	{.Pin = CHANNEL_2_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_2
+    {.gpio = CHANNEL_3_GPIO,	{.Pin = CHANNEL_3_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_3
+    {.gpio = CHANNEL_4_GPIO,	{.Pin = CHANNEL_4_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_4
+    {.gpio = CHANNEL_5_GPIO,	{.Pin = CHANNEL_5_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_5
+    {.gpio = CHANNEL_6_GPIO,	{.Pin = CHANNEL_6_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_6
+    {.gpio = CHANNEL_7_GPIO,	{.Pin = CHANNEL_7_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_7
+    {.gpio = CHANNEL_8_GPIO,	{.Pin = CHANNEL_8_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_8
+    {.gpio = CHANNEL_9_GPIO,	{.Pin = CHANNEL_9_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_9
+    {.gpio = CHANNEL_10_GPIO,	{.Pin = CHANNEL_10_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_10
+    {.gpio = CHANNEL_11_GPIO,	{.Pin = CHANNEL_11_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_11
+    {.gpio = CHANNEL_12_GPIO,	{.Pin = CHANNEL_12_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_12
+    {.gpio = CHANNEL_13_GPIO,	{.Pin = CHANNEL_13_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_13
+    {.gpio = CHANNEL_14_GPIO,	{.Pin = CHANNEL_14_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_14
+    {.gpio = CHANNEL_15_GPIO,	{.Pin = CHANNEL_15_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_15
+    {.gpio = CHANNEL_16_GPIO,	{.Pin = CHANNEL_16_PIN,	    .Mode = GPIO_MODE_OUTPUT_PP, .Pull = GPIO_NOPULL, .Speed = GPIO_SPEED_FREQ_LOW}, .state = GPIO_PIN_RESET}, //CHANNEL_OUT_16
 };
 
 static TIM_HandleTypeDef timerRise;

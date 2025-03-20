@@ -28,11 +28,10 @@
  <Project>
   <ProjectSessionItem path="firmware_clight"/>
   <ProjectSessionItem path="firmware_clight;firmware_clight"/>
-  <ProjectSessionItem path="firmware_clight;firmware_clight;CMSIS Files"/>
-  <ProjectSessionItem path="firmware_clight;firmware_clight;Script Files"/>
   <ProjectSessionItem path="firmware_clight;firmware_clight;Source Files"/>
+  <ProjectSessionItem path="firmware_clight;firmware_clight;Source Files;config"/>
+  <ProjectSessionItem path="firmware_clight;firmware_clight;Source Files;core"/>
   <ProjectSessionItem path="firmware_clight;firmware_clight;Source Files;leds"/>
-  <ProjectSessionItem path="firmware_clight;firmware_clight;System Files"/>
  </Project>
  <Register1>
   <RegisterWindow invisibleNodes="" visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/MSP;CPU/PSP;CPU/PRIMASK;CPU/BASEPRI;CPU/FAULTMASK;CPU/CONTROL;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="firmware_cli_module_UnitTest" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -73,12 +72,14 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="16" y="28" useTextEdit="1" path="../source/drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h" left="0" top="0" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../source/drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" left="0" top="0" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="C:/Program Files/SEGGER/SEGGER Embedded Studio 8.22a/include/stddef.h" left="0" top="0" codecName="UTF-8"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="76" y="244" useTextEdit="1" path="../source/drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h" left="0" top="183" codecName="UTF-8"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="4" useTextEdit="1" path="../source/users/leds/led_driver.c" left="0" top="0" codecName="UTF-8"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="76" y="244" useTextEdit="1" path="../source/drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h" left="0" top="191" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="2" y="290" useTextEdit="1" path="../source/drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h" left="0" top="263" codecName="UTF-8"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="252" useTextEdit="1" path="../source/drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h" left="0" top="192" codecName="UTF-8"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="252" useTextEdit="1" path="../source/drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h" left="0" top="199" codecName="UTF-8"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="1" y="45" useTextEdit="1" path="../source/drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc/linker/STM32F103X6_FLASH.ld" left="0" top="0" codecName="UTF-8"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="136" useTextEdit="1" path="../source/drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc/startup_stm32f103x6.s" left="0" selected="1" top="93" codecName="UTF-8"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="26" y="136" useTextEdit="1" path="../source/drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc/startup_stm32f103x6.s" left="0" top="93" codecName="UTF-8"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="44" useTextEdit="1" path="../source/users/config/config.h" left="0" selected="1" top="0" codecName="UTF-8"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="17" useTextEdit="1" path="../source/users/core/main.c" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockRightTop" x="38" y="34" useTextEdit="1" path="../source/users/leds/led_driver.c" left="0" top="0" codecName="UTF-8"/>
  </Files>
- <EMStudioWindow activeProject="firmware_clight" fileDialogDefaultFilter="*.*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/workspace/software/firmware_clight/source/drivers/CMSIS/Device/ST/STM32F1xx/Include" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <EMStudioWindow activeProject="firmware_clight" fileDialogDefaultFilter="*.*" autoConnectTarget="J-Link" buildConfiguration="KMOUTION_DEBUG" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/workspace/software/firmware_clight/source/users/config" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
