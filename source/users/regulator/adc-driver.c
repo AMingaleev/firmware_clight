@@ -6,9 +6,7 @@
 #include "stm32f1xx_hal_adc.h"
 #include "stm32f1xx_hal_dma.h"
 
-#define SPEED_ADC     (ADC1)
-#define SPEED_GPIO    (GPIOA)
-#define SPEED_PIN     (GPIO_PIN_0)
+#include "config.h"
 
 #define ADC_MAX_VALUE           (4090)
 #define ADC_MIN_VALUE           (1980)

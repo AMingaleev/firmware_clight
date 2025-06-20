@@ -1,8 +1,9 @@
 ﻿#ifndef __CONFIG_H
 #define __CONFIG_H
 
-//Setting gpio for leds
+
 #if defined (CLIGHT_DEBUG)
+//GPIO FOR LEDS
 #define CHANNEL_1_GPIO	(GPIOB)
 #define CHANNEL_2_GPIO	(GPIOB)
 #define CHANNEL_3_GPIO	(GPIOB)
@@ -36,6 +37,24 @@
 #define CHANNEL_14_PIN	(GPIO_PIN_6)
 #define CHANNEL_15_PIN	(GPIO_PIN_7)
 #define CHANNEL_16_PIN	(GPIO_PIN_8)
+
+//GPIO FOR SWITCHS
+#define SWITCH_GPIO   (GPIOB)
+#define SWITCH1_PIN   (GPIO_PIN_1)
+#define SWITCH2_PIN   (GPIO_PIN_2)
+#define SWITCH3_PIN   (GPIO_PIN_10)
+
+//ADC
+#define ADC_PERIPH        (ADC1)
+#define ADC_GPIO          (GPIOA)
+#define ADC_SPEED_PIN     (GPIO_PIN_0)
+
+//SIGNALS
+#define HEAD_BREAK_GPIO     (GPIOA)
+#define HEAD_SIGNAL_PIN     (GPIO_PIN_0)
+#define BREAK_SIGNAL_PIN    (GPIO_PIN_7)
+#define TURN_GPIO           (GPIOB)
+#define TURN_SIGNAL_PIN	    (GPIO_PIN_6)
 #endif
 
 #if defined (KMOUTION_DEBUG)
@@ -72,6 +91,39 @@
 #define CHANNEL_14_PIN	(GPIO_PIN_3)
 #define CHANNEL_15_PIN	(GPIO_PIN_15)
 #define CHANNEL_16_PIN	(GPIO_PIN_12)
+
+//GPIO FOR SWITCHS
+#define SWTICH_TURN_GPIO    (GPIOB)
+#define SWTICH_TURN_PIN_1   (GPIO_PIN_2)
+#define SWITCH_TURN_PIN_2   (GPIO_PIN_10)
+#define SWITCH_TURN_PIN_3   (GPIO_PIN_11)
+#define SWTICH_HEAD_GPIO    (GPIOA)
+#define SWITCH_HEAD_PIN     (GPIO_PIN_3)
+#define SWITCH_BREAK_GPIO   (GPIOA)
+#define SWITCH_BREAK_PIN_1  (GPIO_PIN_5)
+#define SWITCH_BREAK_PIN_2  (GPIO_PIN_5)
+#define SWITCH_SPEC_GPIO    (GPIOC)
+#define SWITCH_SPEC_PIN_1   (GPIO_PIN_13)
+#define SWTICH_SPEC_PIN_2   (GPIO_PIN_12)
+
+//ADC
+#define ADC_PERIPH          (ADC1)
+#define ADC_GPIO            (GPIOA)
+#define ADC_SPEED_PIN       (GPIO_PIN_0)
+#define ADC_PULSE_PIN       (GPIO_PIN_1)
+#define ADC_SQNT_PIN        (GPIO_PIN_2)
+
+//SIGNALS
+#define SIGNAL_BREAK_GPIO     (GPIOA)
+#define SIGNAL_TURN_GPIO      (GPIOA)
+#define SIGNAL_HEAD_GPIO      (GPIOB)
+#define SIGNAL_SPECIAL_GPIO   (GPIOB)
+
+#define SIGANL_BREAK_PIN      (GPIO_PIN_7)
+#define SIGNAL_TURN_PIN       (GPIO_PIN_6)
+#define SIGNAL_HEAD_PIN       (GPIO_PIN_0)
+#define SIGNAL_SPEC_PIN       (GPIO_PIN_1)
+
 #endif
 
 #endif

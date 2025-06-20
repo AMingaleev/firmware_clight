@@ -6,12 +6,9 @@
 #include "stm32f1xx_hal_gpio.h"
 #include "stm32f1xx_hal_exti.h"
 
-#define SWITCH_GPIO   (GPIOB)
-#define SWITCH1_PIN   (GPIO_PIN_1)
-#define SWITCH2_PIN   (GPIO_PIN_2)
-#define SWITCH3_PIN   (GPIO_PIN_10)
+#include "config.h"
 
-static int32_t jumper = 0;    //переменная для переключателя
+static int32_t jumper = 0;    //  
 
 static void Switch_Init(void){
   GPIO_InitTypeDef gpio;

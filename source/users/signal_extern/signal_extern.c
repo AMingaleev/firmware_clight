@@ -6,11 +6,7 @@
 #include "stm32f1xx_hal_rcc.h"
 #include "stm32f1xx_hal_tim.h"
 
-#define HEAD_BREAK_GPIO     (GPIOA)
-#define HEAD_SIGNAL_PIN     (GPIO_PIN_0)
-#define BREAK_SIGNAL_PIN    (GPIO_PIN_7)
-#define TURN_GPIO           (GPIOB)
-#define TURN_SIGNAL_PIN	    (GPIO_PIN_6)
+#include "config.h"
 
 static SignalExtern_e signal_extern;
 

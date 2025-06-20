@@ -6,7 +6,7 @@
 #include "stm32f1xx.h"
 #include "stm32f1xx_hal.h"
 
-#define BREAK_BLINK_FUNCTION_MAX               (6)
+#define BREAK_BLINK_FUNCTION_MAX  (6)
 
 static void BlinkBreak_0(void);
 static void BlinkBreak_1(void);
@@ -15,7 +15,7 @@ static void BlinkBreak_3(void);
 static void BlinkBreak_4(void);
 static void BlinkBreak_5(void);
 
-static volatile uint32_t tms = 0;          //Таймер
+static volatile uint32_t tms = 0;          
 static uint32_t frequence = 0;
 
 static void (*break_function_callback[BREAK_BLINK_FUNCTION_MAX])(void) = {
